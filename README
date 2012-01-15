@@ -1,3 +1,10 @@
+LearnMVC is meant to be a simple starter MVC framework.
+It's primary purpose is to facilitate learning by doing,
+but could also make a nice starting point for a real app.
+
+--- UNCHANGED PunyMVC README BELOW ---
+@todo parse PunyMVC readme for usable parts in LearnMVC readme
+
 PunyMVC is probably the most lightweight PHP MVC framework.
 It barely has any features at all. In spite of that, it's
 very useful for writing web apps, as it helps you keep your
