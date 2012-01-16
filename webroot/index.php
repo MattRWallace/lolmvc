@@ -11,7 +11,7 @@
  * @package LMVC
  * @version .1
  */
-
+/*
 function load_view($controller, $action, $vars) {
 	if (is_file("views/$controller/$action.php")) {
 		ob_start();
@@ -53,3 +53,6 @@ if (!($controller = $parsedURI[0])) {
 
 header('HTTP/1.1 404 Not Found');
 include 'pages/404.php';
+ *
+ */
+?>
