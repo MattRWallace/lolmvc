@@ -8,5 +8,7 @@ PunyMVC code. However, that will change soon.
 
 Requirements: A web-server running PHP 5.3.6+
 
+MIT License, same as PunyMVC.
+
 Learn about PunyMVC here:
 http://dave.ag/an-mvc-framework-in-799-bytes/
