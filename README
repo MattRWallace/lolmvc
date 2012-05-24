@@ -6,7 +6,7 @@ This project got it's start as a fork of PunyMVC, and really, this project
 is still just starting. There is no release as of yet, it is still mostly
 PunyMVC code. However, that will change soon.
 
-Requirements: A web-server running PHP 5.3.6+
+Requirements: A web-server running PHP 5.4.0+
 
 MIT License, same as PunyMVC.
 
