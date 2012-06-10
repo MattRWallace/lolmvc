@@ -11,6 +11,7 @@
  * @package LMVC
  * @version .1
  */
+echo "github test";
 /*
 function load_view($controller, $action, $vars) {
 	if (is_file("views/$controller/$action.php")) {
