@@ -2,7 +2,7 @@
 /**
  * LMVC: Simply Powerful
  *
- * PHP version 5.3+
+ * PHP version 5.4+
  *
  * @author David Mitchel <david@lmvc.net>
  * @copyright David Mitchel 2012
