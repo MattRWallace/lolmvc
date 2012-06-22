@@ -1,7 +1,8 @@
 # Learn or Light Model View Controller
 ## Simply Powerful
 
-LMVC, is meant to be a simple starter MVC framework.
+
+LMVC, is meant to be a framework you can wrap your mind around.
 It's primary purpose is to facilitate learning MVC by doing,
 but could also make a nice base framework for a real app.
 
