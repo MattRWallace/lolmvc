@@ -1,14 +1,14 @@
-LMVC, Learn or Light Model View Controller, is meant to be a simple starter
-MVC framework. It's primary purpose is to facilitate learning MVC by doing,
+# Learn or Light Model View Controller
+
+LMVC, is meant to be a simple starter MVC framework.
+It's primary purpose is to facilitate learning MVC by doing,
 but could also make a nice base framework for a real app.
 
 This project got it's start as a fork of PunyMVC, and really, this project
-is still just starting. There is no release as of yet, it is still mostly
-PunyMVC code. However, that will change soon.
+is still just starting. There is no release as of yet. However, that will change soon.
 
-Requirements: A web-server running PHP 5.4.0+
+**Requirements: A web-server running PHP 5.4.X**
 
-MIT License, same as PunyMVC.
+*MIT License, same as PunyMVC.*
 
-Learn about PunyMVC here:
-http://dave.ag/an-mvc-framework-in-799-bytes/
+[Learn about PunyMVC](http://dave.ag/an-mvc-framework-in-799-bytes/)
