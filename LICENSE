@@ -1,12 +1,12 @@
 ################################################################################
-## LMVC began life as a fork of Dave Hensley's very novel PunyMVC,            ##
+## lolmvc began life as a fork of Dave Hensley's very novel PunyMVC,            ##
 ## both of which are licensed under the very permissive MIT License.          ##
 ################################################################################
 
-LMVC: Simply Powerful
+lolmvc: Simply Powerful
 Copyright (c) 2012 David Mitchel
 Copyright (c) 2012 Matthew Wallace
-http://lmvc.net
+http://lolmvc.com
 
 PunyMVC: A very, very lightweight MVC framework
 Copyright (c) 2011 Dave Hensley
