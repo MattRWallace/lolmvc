@@ -12,12 +12,12 @@ namespace Controller;
  */
 abstract class Controller {
 
-	/**
-	 * The model object providing API that accesses the Database
-	 *
-	 * @var
-	 * @access protected
-	 */
+    /**
+     * The model object providing API that accesses the Database
+     *
+     * @var
+     * @access protected
+     */
     protected $model;
 
     /**
@@ -29,29 +29,29 @@ abstract class Controller {
      */
     protected $view;
 
-	/**
-	 * Constructor
-	 *
-	 * @access public
-	 * @return void
-	 */
-	public function __construct() {
-		// get the model
-		$modelName = "\\Model\\$this->classShortName";
-		$this->model = new $modelName();
+    /**
+     * Constructor
+     *
+     * @access public
+     * @return void
+     */
+    public function __construct() {
+        // get the model
+        $modelName = "\\Model\\$this->classShortName";
+        $this->model = new $modelName();
     }
 
-	/**
-	 * Renders and echoes the HTML
+    /**
+     * Renders and echoes the HTML
      *
      * @see \View\View
-	 * @access public
-	 * @return void
-	 */
+     * @access public
+     * @return void
+     */
     public function renderPage() {
         if (empty($this->view))
             trigger_error('The view was never set! See the documentation.', E_USER_ERROR);
 
-		echo $this->view->renderPage();
-	}
+        echo $this->view->renderPage();
+    }
 }

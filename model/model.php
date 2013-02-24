@@ -15,14 +15,14 @@ namespace Model;
  */
 abstract class Model {
 
-	/**
-	 * Constructor
-	 *
-	 * @access protected
-	 * @return void
-	 */
-	function __construct() {
-	}
+    /**
+     * Constructor
+     *
+     * @access protected
+     * @return void
+     */
+    function __construct() {
+    }
 
 }
 
