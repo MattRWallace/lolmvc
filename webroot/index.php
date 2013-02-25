@@ -1,59 +1,54 @@
 <?php
+
 /**
- * LMVC: Simply Powerful
+ * File: index.php
+ * Simple MVC core for web applications.  Server must be configured to route
+ * all requests to this file.  See server documentation if you do not know how
+ * to do so.
  *
- * PHP version 5.4+
- *
- * @author David Mitchel <david@lmvc.net>
- * @copyright David Mitchel 2012
- * @license http://www.opensource.org/licenses/mit-license.html
- * @link http://lmvc.net
- * @package LMVC
- * @version .1
+ * @author David Mitchel <david@cs.txstate.edu>
+ * @author Matt Wallace <matt@cs.txstate.edu>
+ * @version 1.0
+ * @package MVC
  */
-echo "github tester collab";
-/*
-function load_view($controller, $action, $vars) {
-	if (is_file("views/$controller/$action.php")) {
-		ob_start();
-		include "views/$controller/$action.php";
-		$content = ob_get_contents();
-		ob_end_clean();
-	}
 
-	return isset($content) ? $content : '';
-}
 
-function render_page($content, $layout) {
-	if (isset($layout)) {
-		include "layouts/$layout.php";
-	} else {
-		echo $content;
-	}
-}
+// Set Timezone
+date_default_timezone_set('America/Chicago');
 
-include 'config/config.php';
-$baseDirectoryLength = strlen(dirname($_SERVER['PHP_SELF']));
-$parsedURI = explode('/', substr($_SERVER['REDIRECT_URL'], ($baseDirectoryLength > 1) ? $baseDirectoryLength + 1 : 1));
+// Set Locale
+setlocale(LC_ALL, 'en_US');
 
-if (!($controller = $parsedURI[0])) {
-	include 'pages/index.php';
-	exit();
-} elseif (!preg_match('/\W/', $controller . isset($parsedURI[1]) ? isset($parsedURI[1]) : '') && is_file("controllers/$controller.php")) {
-	include "controllers/$controller.php";
-	$controllerClass = $controller . 'Controller';
-	$action = isset($parsedURI[1]) && !empty($parsedURI[1]) ? $parsedURI[1] : 'index';
-
-	if (class_exists($controllerClass) && in_array($action, get_class_methods($controllerClass))) {
-		$controllerObject = new $controllerClass;
-		$content = load_view($controller, $action, $controllerObject->$action(array_slice($parsedURI, 2)));
-		render_page($content, isset($controllerObject->layout) ? $controllerObject->layout : null);
-		exit();
-	}
-}
-
-header('HTTP/1.1 404 Not Found');
-include 'pages/404.php';
- *
+/**
+ * Initialize the built-in PHP class autoloader.
  */
-?>
+set_include_path(get_include_path() . PATH_SEPARATOR . '../' . PATH_SEPARATOR . '../library/');
+spl_autoload_extensions('.php');
+spl_autoload_register();
+
+// load configuration values
+new Config();
+
+// Debug settings
+if (DEBUG) {
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
+} else {
+    error_reporting(E_ALL & ~E_NOTICE);
+    ini_set('display_errors', '1');
+}
+
+// create the router, generate the page and display
+try {
+    $router = new \Service\Route($_SERVER['REQUEST_URI']);
+} catch (\Service\PageNotFoundException $e) {
+    $message = $e->getMessage();
+    $request = "error404";
+    if (!empty($message))
+        $request .= "/$message/";
+    $router = new \Service\Route($request);
+}
+
+$controller = $router->getController();
+$controller->renderPage();
+
